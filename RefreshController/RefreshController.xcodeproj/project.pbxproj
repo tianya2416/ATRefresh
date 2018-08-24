@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12D5CF4FFAC381FA133D3776 /* libPods-RefreshController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E23BC82062715198284A7125 /* libPods-RefreshController.a */; };
+		8F77DA06212FED8500F5A87B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DA05212FED8500F5A87B /* AppDelegate.m */; };
+		8F77DA09212FED8500F5A87B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DA08212FED8500F5A87B /* ViewController.m */; };
+		8F77DA0E212FED8700F5A87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F77DA0D212FED8700F5A87B /* Assets.xcassets */; };
+		8F77DA11212FED8700F5A87B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F77DA0F212FED8700F5A87B /* LaunchScreen.storyboard */; };
+		8F77DA14212FED8800F5A87B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DA13212FED8800F5A87B /* main.m */; };
+		8F77DA1C212FEDCD00F5A87B /* BaseRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DA1B212FEDCD00F5A87B /* BaseRefreshController.m */; };
+		8F77DA1F212FEE8A00F5A87B /* BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DA1E212FEE8A00F5A87B /* BaseTableController.m */; };
+		8F77DA22212FEF7B00F5A87B /* BaseCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DA21212FEF7A00F5A87B /* BaseCollectionController.m */; };
+		8F77DA25212FF7B400F5A87B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DA24212FF7B400F5A87B /* TableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		43720529F033917E8E2E532D /* Pods-RefreshController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RefreshController.release.xcconfig"; path = "Pods/Target Support Files/Pods-RefreshController/Pods-RefreshController.release.xcconfig"; sourceTree = "<group>"; };
+		8A67886265B634B9F5D1415C /* Pods-RefreshController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RefreshController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RefreshController/Pods-RefreshController.debug.xcconfig"; sourceTree = "<group>"; };
+		8F77DA01212FED8500F5A87B /* RefreshController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefreshController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F77DA04212FED8500F5A87B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8F77DA05212FED8500F5A87B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8F77DA07212FED8500F5A87B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8F77DA08212FED8500F5A87B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8F77DA0D212FED8700F5A87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F77DA10212FED8700F5A87B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F77DA12212FED8700F5A87B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F77DA13212FED8800F5A87B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8F77DA1A212FEDCD00F5A87B /* BaseRefreshController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseRefreshController.h; sourceTree = "<group>"; };
+		8F77DA1B212FEDCD00F5A87B /* BaseRefreshController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseRefreshController.m; sourceTree = "<group>"; };
+		8F77DA1D212FEE8A00F5A87B /* BaseTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableController.h; sourceTree = "<group>"; };
+		8F77DA1E212FEE8A00F5A87B /* BaseTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableController.m; sourceTree = "<group>"; };
+		8F77DA20212FEF7A00F5A87B /* BaseCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionController.h; sourceTree = "<group>"; };
+		8F77DA21212FEF7A00F5A87B /* BaseCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionController.m; sourceTree = "<group>"; };
+		8F77DA23212FF7B400F5A87B /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		8F77DA24212FF7B400F5A87B /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		E23BC82062715198284A7125 /* libPods-RefreshController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RefreshController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F77D9FE212FED8500F5A87B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12D5CF4FFAC381FA133D3776 /* libPods-RefreshController.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A043875D6621075D77F6574 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A67886265B634B9F5D1415C /* Pods-RefreshController.debug.xcconfig */,
+				43720529F033917E8E2E532D /* Pods-RefreshController.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		72368C29BD2BC45011C92CEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E23BC82062715198284A7125 /* libPods-RefreshController.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F77D9F8212FED8500F5A87B = {
+			isa = PBXGroup;
+			children = (
+				8F77DA03212FED8500F5A87B /* RefreshController */,
+				8F77DA02212FED8500F5A87B /* Products */,
+				1A043875D6621075D77F6574 /* Pods */,
+				72368C29BD2BC45011C92CEE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8F77DA02212FED8500F5A87B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F77DA01212FED8500F5A87B /* RefreshController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F77DA03212FED8500F5A87B /* RefreshController */ = {
+			isa = PBXGroup;
+			children = (
+				8F77DA04212FED8500F5A87B /* AppDelegate.h */,
+				8F77DA05212FED8500F5A87B /* AppDelegate.m */,
+				8F77DA07212FED8500F5A87B /* ViewController.h */,
+				8F77DA08212FED8500F5A87B /* ViewController.m */,
+				8F77DA0D212FED8700F5A87B /* Assets.xcassets */,
+				8F77DA0F212FED8700F5A87B /* LaunchScreen.storyboard */,
+				8F77DA12212FED8700F5A87B /* Info.plist */,
+				8F77DA13212FED8800F5A87B /* main.m */,
+				8F77DA1A212FEDCD00F5A87B /* BaseRefreshController.h */,
+				8F77DA1B212FEDCD00F5A87B /* BaseRefreshController.m */,
+				8F77DA1D212FEE8A00F5A87B /* BaseTableController.h */,
+				8F77DA1E212FEE8A00F5A87B /* BaseTableController.m */,
+				8F77DA20212FEF7A00F5A87B /* BaseCollectionController.h */,
+				8F77DA21212FEF7A00F5A87B /* BaseCollectionController.m */,
+				8F77DA23212FF7B400F5A87B /* TableViewController.h */,
+				8F77DA24212FF7B400F5A87B /* TableViewController.m */,
+			);
+			path = RefreshController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F77DA00212FED8500F5A87B /* RefreshController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F77DA17212FED8800F5A87B /* Build configuration list for PBXNativeTarget "RefreshController" */;
+			buildPhases = (
+				A5CE2601050856F96476D18A /* [CP] Check Pods Manifest.lock */,
+				8F77D9FD212FED8500F5A87B /* Sources */,
+				8F77D9FE212FED8500F5A87B /* Frameworks */,
+				8F77D9FF212FED8500F5A87B /* Resources */,
+				5BE9FEC4D27E3A21A6DC6029 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RefreshController;
+			productName = RefreshController;
+			productReference = 8F77DA01212FED8500F5A87B /* RefreshController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F77D9F9212FED8500F5A87B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "王炜圣";
+				TargetAttributes = {
+					8F77DA00212FED8500F5A87B = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 8F77D9FC212FED8500F5A87B /* Build configuration list for PBXProject "RefreshController" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F77D9F8212FED8500F5A87B;
+			productRefGroup = 8F77DA02212FED8500F5A87B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F77DA00212FED8500F5A87B /* RefreshController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F77D9FF212FED8500F5A87B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F77DA11212FED8700F5A87B /* LaunchScreen.storyboard in Resources */,
+				8F77DA0E212FED8700F5A87B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BE9FEC4D27E3A21A6DC6029 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RefreshController/Pods-RefreshController-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RefreshController/Pods-RefreshController-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5CE2601050856F96476D18A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RefreshController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F77D9FD212FED8500F5A87B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F77DA1C212FEDCD00F5A87B /* BaseRefreshController.m in Sources */,
+				8F77DA09212FED8500F5A87B /* ViewController.m in Sources */,
+				8F77DA22212FEF7B00F5A87B /* BaseCollectionController.m in Sources */,
+				8F77DA14212FED8800F5A87B /* main.m in Sources */,
+				8F77DA06212FED8500F5A87B /* AppDelegate.m in Sources */,
+				8F77DA25212FF7B400F5A87B /* TableViewController.m in Sources */,
+				8F77DA1F212FEE8A00F5A87B /* BaseTableController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8F77DA0F212FED8700F5A87B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F77DA10212FED8700F5A87B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F77DA15212FED8800F5A87B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8F77DA16212FED8800F5A87B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F77DA18212FED8800F5A87B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A67886265B634B9F5D1415C /* Pods-RefreshController.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RefreshController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WebViewProject.RefreshController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = $PODS_ROOT;
+			};
+			name = Debug;
+		};
+		8F77DA19212FED8800F5A87B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43720529F033917E8E2E532D /* Pods-RefreshController.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RefreshController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WebViewProject.RefreshController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = $PODS_ROOT;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F77D9FC212FED8500F5A87B /* Build configuration list for PBXProject "RefreshController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F77DA15212FED8800F5A87B /* Debug */,
+				8F77DA16212FED8800F5A87B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F77DA17212FED8800F5A87B /* Build configuration list for PBXNativeTarget "RefreshController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F77DA18212FED8800F5A87B /* Debug */,
+				8F77DA19212FED8800F5A87B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F77D9F9212FED8500F5A87B /* Project object */;
+}

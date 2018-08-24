@@ -1,0 +1,13 @@
+platform :ios, '8.0'
+#use_frameworks!
+
+inhibit_all_warnings!
+target :RefreshController  do
+
+    pod 'Masonry'
+    pod 'MJRefresh', :git => 'https://github.com/CoderLT/MJRefresh.git'
+    pod 'DZNEmptyDataSet'
+    pod 'YYKit'
+    pod 'KVOController'
+    pod 'AFNetworking'
+end
