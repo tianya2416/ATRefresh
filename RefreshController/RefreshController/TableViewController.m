@@ -2,8 +2,8 @@
 //  TableViewController.m
 //  RefreshController
 //
-//  Created by 王炜圣 on 2018/8/24.
-//  Copyright © 2018年 王炜圣. All rights reserved.
+//  Created by tianya on 2018/8/24.
+//  Copyright © 2018年 tianya. All rights reserved.
 //
 
 #import "TableViewController.h"
@@ -26,27 +26,26 @@
     self.listData = [@[] mutableCopy];
     switch (self.refreshLoad) {
         case ATRefreshLoadNone:
-        {
+        {//无下拉刷新、无上拉加载
             [self setupEmpty:self.tableView];
             [self setupRefresh:self.tableView option:ATRefreshNone];
             [self headerRefreshing];
         }break;
         case ATRefreshLoadHead:
-        {
+        {//有下拉刷新、无上拉加载
             [self setupEmpty:self.tableView];
             [self setupRefresh:self.tableView option:ATHeaderRefresh|ATHeaderAutoRefresh];
         }break;
         case ATRefreshLoadFoot:
-        {
+        {//无下拉刷新、有上拉加载
             [self setupEmpty:self.tableView];
             [self setupRefresh:self.tableView option:ATFooterRefresh|ATFooterAutoRefresh];
         }break;
         case ATRefreshLoadDefault:
-        {
+        {//有下拉刷新、有上拉加载
             [self setupEmpty:self.tableView];
             [self setupRefresh:self.tableView option:ATRefreshDefault];
         }break;
-            
         default:
             break;
     }

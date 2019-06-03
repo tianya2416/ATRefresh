@@ -2,8 +2,8 @@
 //  BaseRefreshController.m
 //  RefreshController
 //
-//  Created by 王炜圣 on 2018/8/24.
-//  Copyright © 2018年 王炜圣. All rights reserved.
+//  Created by tianya on 2018/8/24.
+//  Copyright © 2018年 tianya. All rights reserved.
 //
 
 #import "BaseRefreshController.h"
@@ -50,8 +50,10 @@
             }
             [images addObject:image];
         }
-        [header setImages:@[images.firstObject] forState:MJRefreshStateIdle];
-        [header setImages:images duration:1 forState:MJRefreshStateRefreshing];
+        if (images.count > 0) {
+            [header setImages:@[images.firstObject] forState:MJRefreshStateIdle];
+            [header setImages:images duration:1 forState:MJRefreshStateRefreshing];
+        }
         
         if (option & ATHeaderAutoRefresh) {
             [self headerRefreshing];
@@ -73,8 +75,10 @@
             }
             [images addObject:image];
         }
-        [footer setImages:@[images[0]] forState:MJRefreshStateIdle];
-        [footer setImages:images duration:1.0f forState:MJRefreshStateRefreshing];
+        if (images.count > 0) {
+            [footer setImages:@[images[0]] forState:MJRefreshStateIdle];
+            [footer setImages:images duration:1.0f forState:MJRefreshStateRefreshing];
+        }
         [footer setTitle:@"已经到底了" forState:MJRefreshStateNoMoreData];
         [footer setTitle:@"" forState:MJRefreshStatePulling];
         [footer setTitle:@"" forState:MJRefreshStateRefreshing];
@@ -282,15 +286,5 @@
 {
   return  [YYReachability reachability].status != YYReachabilityStatusNone;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

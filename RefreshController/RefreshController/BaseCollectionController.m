@@ -2,8 +2,8 @@
 //  BaseCollectionController.m
 //  RefreshController
 //
-//  Created by 王炜圣 on 2018/8/24.
-//  Copyright © 2018年 王炜圣. All rights reserved.
+//  Created by tianya on 2018/8/24.
+//  Copyright © 2018年 tianya. All rights reserved.
 //
 
 #import "BaseCollectionController.h"

@@ -2,25 +2,29 @@
 //  ViewController.m
 //  RefreshController
 //
-//  Created by 王炜圣 on 2018/8/24.
-//  Copyright © 2018年 王炜圣. All rights reserved.
+//  Created by tianya on 2018/8/24.
+//  Copyright © 2018年 tianya. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "TableViewController.h"
 @interface ViewController ()
-@property (strong, nonatomic) NSMutableArray *listData;
+@property (strong, nonatomic) NSArray *listData;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.listData = @[@"普通请求",@"下拉刷新",@"上拉加载",@"上下加载"].mutableCopy;
-    [self.tableView reloadData];
     
+    [self setupEmpty:self.tableView];
+    [self setupRefresh:self.tableView option:ATRefreshNone];
 }
-
+- (void)refreshData:(NSInteger)page{
+    self.listData = @[@"普通请求",@"下拉刷新",@"上拉加载",@"上拉加载/下拉刷新"];
+    [self.tableView reloadData];
+    [self endRefresh:NO];
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
