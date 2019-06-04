@@ -3,10 +3,10 @@
     下载地址：https://github.com/tianya2416/RefreshController.git
     
     情况1:加载中UI
-![image](https://github.com/tianya2416/RefreshController/blob/master/RefreshController/RefreshController/Resources/1.png)
-
-    情况2:加载完成无数据UI
 ![image](https://github.com/tianya2416/RefreshController/blob/master/RefreshController/RefreshController/Resources/2.png)
+
+    情况2:加载完成有数据UI
+![image](https://github.com/tianya2416/RefreshController/blob/master/RefreshController/RefreshController/Resources/1.png)
 
     情况3:加载中网络异常UI
 ![image](https://github.com/tianya2416/RefreshController/blob/master/RefreshController/RefreshController/Resources/3.png)
