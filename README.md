@@ -8,10 +8,10 @@
     情况2:加载完成有数据UI
 ![image](https://github.com/tianya2416/RefreshController/blob/master/RefreshController/RefreshController/Resources/1.png)
 
-    情况3:加载中网络异常UI
+    情况3:加载中没有数据UI
 ![image](https://github.com/tianya2416/RefreshController/blob/master/RefreshController/RefreshController/Resources/3.png)
 
-    情况4:加载中没有数据UI
+    情况4:加载中网络异常UI
 ![image](https://github.com/tianya2416/RefreshController/blob/master/RefreshController/RefreshController/Resources/4.png)
     
     使用方式
