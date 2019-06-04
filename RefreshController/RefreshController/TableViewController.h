@@ -8,13 +8,6 @@
 
 #import "BaseTableController.h"
 
-typedef NS_ENUM(NSUInteger, ATRefreshLoad) {
-    ATRefreshLoadNone = 0,
-    ATRefreshLoadHead,
-    ATRefreshLoadFoot,
-    ATRefreshLoadDefault,
-};
-
 @interface TableViewController : BaseTableController
 
 + (instancetype)vcWithRefreshLoad:(ATRefreshLoad )refreshLoad;

@@ -31,7 +31,7 @@ DEPENDENCIES:
   - YYKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - AFNetworking
     - DZNEmptyDataSet
     - KVOController
@@ -55,6 +55,6 @@ SPEC CHECKSUMS:
   MJRefresh: f845c1a10f0309233fb352425475897a5c50e9f0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c774d573c7ced3c462b291f4c433dacbc06d533c
+PODFILE CHECKSUM: 3417701e5a2365792987a3af50bbc3dbfbf2b5a1
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.1

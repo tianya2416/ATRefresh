@@ -18,11 +18,14 @@
 {
     TableViewController *vc = [[TableViewController alloc] init];
     vc.refreshLoad = refreshLoad;
-    
     return vc;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadUI];
+}
+
+- (void)loadUI{
     self.listData = [@[] mutableCopy];
     switch (self.refreshLoad) {
         case ATRefreshLoadNone:
@@ -50,13 +53,21 @@
             break;
     }
 }
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
 - (void)refreshData:(NSInteger)page
 {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    params[@"start"] = @(1+(page-1)*RefreshPageSize);
+    params[@"end"] = @(RefreshPageSize);
+    CGRect rect = [UIScreen mainScreen].bounds;
+    NSInteger width = (int) (rect.size.width * 2);
+    NSInteger height = (int) (rect.size.height * 2);
+    params[@"imgSize"] = [NSString stringWithFormat:@"%lix%li",(long)width,(long)height];
+    
+    [BaseNetManager wallHot:params success:^(id  _Nonnull object) {
+        
+    } failure:^(NSString * _Nonnull error) {
+        [self endRefreshFailure];
+    }];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (page == 1) {
             [self.listData removeAllObjects];

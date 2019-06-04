@@ -13,6 +13,13 @@
 #import <YYKit.h>
 #import <KVOController.h>
 #import <AFNetworking.h>
+#import "BaseNetManager.h"
+typedef NS_ENUM(NSUInteger, ATRefreshLoad) {
+    ATRefreshLoadNone = 0,
+    ATRefreshLoadHead,
+    ATRefreshLoadFoot,
+    ATRefreshLoadDefault,
+};
 /**
  *  集成刷新控件
  */

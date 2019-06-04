@@ -16,14 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:@[@"UITableView",@"UICollectionView"]];
+    [segment setFrame:CGRectMake(0, 0, 150, 30)];
+    self.navigationItem.titleView = segment;
     
+    [segment addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
     [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATRefreshNone];
 }
+
 - (void)refreshData:(NSInteger)page{
     self.listData = @[@"普通请求",@"下拉刷新",@"上拉加载",@"上拉加载/下拉刷新"];
     [self.tableView reloadData];
     [self endRefresh:NO];
+}
+- (void)segmentAction:(UISegmentedControl *)sender{
+    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

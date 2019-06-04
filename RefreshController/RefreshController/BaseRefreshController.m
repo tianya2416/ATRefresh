@@ -8,17 +8,19 @@
 
 #import "BaseRefreshController.h"
 
+#define defaultDataEmpty [UIImage imageNamed:@"icon_data_empty"]//空数据图片
+#define defaultDataLoad [UIImage imageNamed:@"icon_data_load"]//加载中图片
+#define defaultNetError [UIImage imageNamed:@"icon_net_error"]//无网络图片
+
 @interface BaseRefreshController () {
     BOOL _isSetKVO;
-    BOOL _needReload;
     __weak UIView *_emptyView;
 }
 @property (nonatomic, assign) NSInteger currentPage;
-@property (nonatomic, assign) BOOL isRefreshing;
-@property (nonatomic, copy) NSString *emptyTitle;
 @property (nonatomic, strong) UIImage *emptyImage;
-@property (nonatomic, strong) UIImage *noNetImage;
-
+@property (nonatomic, copy) NSString *emptyTitle;
+@property (nonatomic, assign) BOOL isRefreshing;
+@property (nonatomic, assign) BOOL reachable;
 @end
 
 @implementation BaseRefreshController
@@ -37,6 +39,10 @@
 #pragma mark - refresh 刷新处理
 - (void)setupRefresh:(UIScrollView *)scrollView option:(ATRefreshOption)option {
     self.scrollView = scrollView;
+    if (option == ATRefreshNone) {
+        [self headerRefreshing];
+        return;
+    }
     if (option & ATHeaderRefresh) {
         MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
         header.automaticallyChangeAlpha = YES;
@@ -180,13 +186,13 @@
 
 #pragma mark - DZNEmptyData 空数据界面处理
 - (void)setupEmpty:(UIScrollView *)scrollView {
-    [self setupEmpty:scrollView image:[UIImage imageNamed:@"ic_dingdan_kongtai"] title:FDMSG_Home_DataEmpty];
+    [self setupEmpty:scrollView image:defaultDataEmpty title:FDMSG_Home_DataEmpty];
 }
 - (void)setupEmpty:(UIScrollView *)scrollView image:(UIImage *)image title:(NSString *)title {
     scrollView.emptyDataSetSource = self;
     scrollView.emptyDataSetDelegate = self;
-    self.emptyImage = image;
-    self.emptyTitle = title;
+    self.emptyImage = image ?: defaultDataEmpty;
+    self.emptyTitle = title ?: FDMSG_Home_DataEmpty;
     
     if (_isSetKVO) {
         return;
@@ -218,11 +224,7 @@
     return nil;
 }
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-    UIImage *title = self.isRefreshing ? [UIImage imageNamed:@"MGLoading_1"] : self.emptyImage;
-    if (![self reachable]) {
-        title = [UIImage imageNamed:@"ic_wifi_error"];
-    }
-    return title;
+    return !self.reachable ? defaultNetError :(self.isRefreshing ? defaultDataLoad : self.emptyImage);
 }
 - (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView {
     return nil;
@@ -260,7 +262,6 @@
 - (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView {
     return 1;
 }
-
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView {
     return YES;
 }
@@ -274,9 +275,7 @@
     return NO;
 }
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view {
-    if (!self.isRefreshing) {
-        [self headerRefreshing];
-    }
+    self.isRefreshing ? nil : [self headerRefreshing];
 }
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
 {
