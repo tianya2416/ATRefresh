@@ -14,9 +14,16 @@
                           success:(void(^)(id object))success
                           failure:(void(^)(NSString *error))failure{
     //宝贝
-    return [AFRequestTool method:HttpMethodPost serializer:HttpSerializeDefault urlString:kUrlWall(@"corp/bizhiClient/getGroupInfo.php?isAttion=1") params:params timeOut:10 success:success failure:^(NSError * _Nonnull error) {
+    return [AFRequestTool method:HttpMethodPost serializer:HttpSerializeDefault urlString:kUrlWall(@"corp/bizhiClient/getGroupInfo.php?isAttion=1") params:params timeOut:10 success:^(id  _Nonnull object) {
+        if ([object isKindOfClass:NSData.class]) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:object options:NSJSONReadingMutableLeaves error:nil];
+            !success ?: success(dic[@"result"][@"groupList"]);
+            NSLog(@"%@",dic);
+            
+        }
+    } failure:^(NSError * _Nonnull error) {
         !failure ?: failure(error.description);
-    }]
+    }];
 
 }
 @end

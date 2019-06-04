@@ -8,25 +8,23 @@
 
 #import "ViewController.h"
 #import "TableViewController.h"
+#import "CollectionController.h"
 @interface ViewController ()
 @property (strong, nonatomic) NSArray *listData;
+@property (strong, nonatomic) UISegmentedControl *segmentedControl;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:@[@"UITableView",@"UICollectionView"]];
-    [segment setFrame:CGRectMake(0, 0, 150, 30)];
-    self.navigationItem.titleView = segment;
-    
-    [segment addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+    self.navigationItem.titleView = self.segmentedControl;
     [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATRefreshNone];
 }
 
 - (void)refreshData:(NSInteger)page{
-    self.listData = @[@"普通请求",@"下拉刷新",@"上拉加载",@"上拉加载/下拉刷新"];
+    self.listData = @[@"普通请求",@"集成下拉刷新",@"集成上拉加载",@"集成上拉加载/下拉刷新"];
     [self.tableView reloadData];
     [self endRefresh:NO];
 }
@@ -43,7 +41,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return 60;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -57,8 +55,20 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TableViewController * vc =[TableViewController vcWithRefreshLoad:indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIViewController *vc  = self.segmentedControl.selectedSegmentIndex == 0 ? [TableViewController vcWithRefreshLoad:indexPath.row] : [CollectionController vcWithRefreshLoad:indexPath.row];
+    [vc showNavTitle:self.listData[indexPath.row]];
     [self.navigationController pushViewController:vc animated:YES];
+}
+- (UISegmentedControl *)segmentedControl{
+    if (!_segmentedControl) {
+        _segmentedControl= [[UISegmentedControl alloc] initWithItems:@[@"UITableView",@"UICollectionView"]];
+        [_segmentedControl setFrame:CGRectMake(0, 0, 150, 30)];
+        
+        [_segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+        _segmentedControl.selectedSegmentIndex = 0;
+    }
+    return _segmentedControl;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

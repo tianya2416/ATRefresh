@@ -239,25 +239,7 @@
     return nil;
 }
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
-    UIEdgeInsets inset = scrollView.mj_header ? scrollView.mj_header.scrollViewOriginalInset : scrollView.contentInset;
-    CGFloat contentSizeHeight = [scrollView.className isEqualToString:@"WKScrollView"] ? 0 : scrollView.contentSize.height;
-    if (!_emptyView || _emptyView.superview != scrollView) {
-        _emptyView = nil;
-        [scrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([obj.className isEqualToString:@"DZNEmptyDataSetView"]) {
-                self->_emptyView = obj;
-                *stop = YES;
-            }
-        }];
-        if (_emptyView.clipsToBounds) {
-            _emptyView.clipsToBounds = NO;
-        }
-    }
-    CGFloat offset = inset.top + contentSizeHeight + (scrollView.height - inset.top - contentSizeHeight - inset.bottom) * 0.4f - scrollView.height * 0.5f - ((CGPoint)([_emptyView convertPoint:CGPointZero toView:self.scrollView.superview])).y;
-    if (scrollView.mj_header.isRefreshing) {
-        offset += MJRefreshHeaderHeight;
-    }
-    return offset;
+    return -NAVI_BAR_HIGHT/2;
 }
 - (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView {
     return 1;

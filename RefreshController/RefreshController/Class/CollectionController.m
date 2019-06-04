@@ -7,7 +7,8 @@
 //
 
 #import "CollectionController.h"
-//    pod 'MJRefresh', :git => 'https://github.com/CoderLT/MJRefresh.git'
+#import "CollectionViewCell.h"
+
 @interface CollectionController ()
 @property (strong, nonatomic) NSMutableArray *listData;
 @property (assign, nonatomic) ATRefreshLoad refreshLoad;
@@ -61,8 +62,17 @@
     NSInteger width = (int) (rect.size.width * 2);
     NSInteger height = (int) (rect.size.height * 2);
     params[@"imgSize"] = [NSString stringWithFormat:@"%lix%li",(long)width,(long)height];
+    
     [BaseNetManager wallHot:params success:^(id  _Nonnull object) {
-        
+        if ([object isKindOfClass:NSArray.class]) {
+            NSArray *datas = [NSArray modelArrayWithClass:BaseModel.class json:object];
+            if (datas) {
+                [self.listData addObjectsFromArray:datas];
+            }
+            
+            [self.collectionView reloadData];
+            [self endRefresh:datas.count >= RefreshPageSize];
+        }
     } failure:^(NSString * _Nonnull error) {
         [self endRefreshFailure];
     }];
@@ -83,7 +93,12 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    CollectionViewCell *cell = [CollectionViewCell cellForCollectionView:collectionView indexPath:indexPath];
+    BaseModel *model = self.listData[indexPath.row];
+    [cell.imageV setImageWithURL:[NSURL URLWithString:model.coverImgUrl] placeholder:[UIImage imageWithColor:[UIColor colorWithRGB:0xf6f6f6]]];
+    cell.titleLab.text = model.gName ?:@"";
+    cell.subTitleLab.text = [NSString stringWithFormat:@"观看次数:%@",model.voteGood ?:@"0"];
+    return cell;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     return 0;

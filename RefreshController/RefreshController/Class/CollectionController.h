@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CollectionController : BaseCollectionController
-
++ (instancetype)vcWithRefreshLoad:(ATRefreshLoad )refreshLoad;
 @end
 
 NS_ASSUME_NONNULL_END

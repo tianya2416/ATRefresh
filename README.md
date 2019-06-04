@@ -3,8 +3,10 @@
     下载地址：https://github.com/tianya2416/RefreshController.git
     
     情况1:加载中UI
+![image](https://github.com/tianya2416/GKiOSApp/blob/master/GKiOSApp/GKiOSApp/Class/Resources/1.png)
     情况2:加载完成无数据UI
     情况3:加载中网络异常UI
+    情况4:加载中没有数据UI
     
     使用方式
     一、//无下拉刷新、无上拉加载

@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="78.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Na6-hz-VaU">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Na6-hz-VaU">
                         <rect key="frame" x="10" y="10" width="103" height="58"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Na6-hz-VaU" secondAttribute="height" multiplier="16:9" id="kaI-ZU-2xH"/>

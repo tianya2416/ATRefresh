@@ -7,7 +7,7 @@
 //
 
 #import "TableViewController.h"
-
+#import "TableViewCell.h"
 @interface TableViewController ()
 @property (strong, nonatomic) NSMutableArray *listData;
 @property (assign, nonatomic) ATRefreshLoad refreshLoad;
@@ -26,6 +26,7 @@
 }
 
 - (void)loadUI{
+
     self.listData = [@[] mutableCopy];
     switch (self.refreshLoad) {
         case ATRefreshLoadNone:
@@ -64,44 +65,20 @@
     params[@"imgSize"] = [NSString stringWithFormat:@"%lix%li",(long)width,(long)height];
     
     [BaseNetManager wallHot:params success:^(id  _Nonnull object) {
-        
+        if ([object isKindOfClass:NSArray.class]) {
+            NSArray *datas = [NSArray modelArrayWithClass:BaseModel.class json:object];
+            if (datas) {
+                [self.listData addObjectsFromArray:datas];
+            }
+            [self.tableView reloadData];
+            [self endRefresh:datas.count >= RefreshPageSize];
+        }
     } failure:^(NSString * _Nonnull error) {
         [self endRefreshFailure];
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (page == 1) {
-            [self.listData removeAllObjects];
-        }
-        for (int i = 0; i<20; i++) {
-            [self.listData addObject:[NSString stringWithFormat:@"第%@条数据",@(i)]];
-        }
-        if (self.refreshLoad == ATRefreshLoadHead) {
-            int random = [self getRandomNumber:100 to:200];
-            if (random%3==0) {
-                [self.listData removeAllObjects];
-                [self.tableView reloadData];
-                [self endRefreshFailure];
-            }else if(random%3==1)
-            {
-                [self.tableView reloadData];
-                [self endRefresh:NO];
-            }else
-            {
-                [self.tableView reloadData];
-                [self endRefresh:YES];
-            }
-        }else
-        {
-            [self.tableView reloadData];
-            [self endRefresh:YES];
-        }
-    });
+    
 }
 
-- (int)getRandomNumber:(int)from to:(int)to
-{
-    return (int)(from + (arc4random() % (to - from + 1)));
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -113,16 +90,15 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return 80;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identy =@"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identy];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identy];
-    }
-    cell.textLabel.text = self.listData[indexPath.row];
+    TableViewCell *cell = [TableViewCell cellForTableView:tableView indexPath:indexPath];
+    BaseModel *model = self.listData[indexPath.row];
+    [cell.imaeV setImageWithURL:[NSURL URLWithString:model.coverImgUrl] placeholder:[UIImage imageWithColor:[UIColor colorWithRGB:0xf6f6f6]]];
+    cell.titleLab.text = model.gName ?:@"";
+    cell.subTitleLab.text = [NSString stringWithFormat:@"观看次数:%@",model.voteGood ?:@"0"];
     return cell;
 }
 - (void)didReceiveMemoryWarning {
