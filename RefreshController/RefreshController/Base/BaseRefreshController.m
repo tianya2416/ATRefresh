@@ -31,6 +31,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
 }
 - (void)dealloc {
     _scrollView.delegate = nil;
