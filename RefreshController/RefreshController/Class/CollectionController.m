@@ -65,7 +65,7 @@
     
     [BaseNetManager wallHot:params success:^(id  _Nonnull object) {
         if ([object isKindOfClass:NSArray.class]) {
-            NSArray *datas = [NSArray modelArrayWithClass:BaseModel.class json:object];
+            NSArray *datas = [NSArray yy_modelArrayWithClass:BaseModel.class json:object];
             if (datas) {
                 [self.listData addObjectsFromArray:datas];
             }
@@ -88,14 +88,11 @@
 {
     return UIEdgeInsetsMake(1,1,1,1);
 }
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    return CGSizeMake(self.view.frame.size.width, 80);
-//}
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CollectionViewCell *cell = [CollectionViewCell cellForCollectionView:collectionView indexPath:indexPath];
     BaseModel *model = self.listData[indexPath.row];
-    [cell.imageV setImageWithURL:[NSURL URLWithString:model.coverImgUrl] placeholder:[UIImage imageWithColor:[UIColor colorWithRGB:0xf6f6f6]]];
+    [cell.imageV sd_setImageWithURL:[NSURL URLWithString:model.coverImgUrl]];
     cell.titleLab.text = model.gName ?:@"";
     cell.subTitleLab.text = [NSString stringWithFormat:@"观看次数:%@",model.voteGood ?:@"0"];
     return cell;

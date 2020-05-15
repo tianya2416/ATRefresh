@@ -42,7 +42,7 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.alwaysBounceVertical = YES;
-        _collectionView.backgroundColor = [UIColor colorWithRGB:0xf6f6f6];
+        _collectionView.backgroundColor = UIColor.whiteColor;
         _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     }
     return _collectionView;

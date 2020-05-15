@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <YYKit/NSObject+YYModel.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseModel : NSObject<NSCoding, NSCopying,YYModel>

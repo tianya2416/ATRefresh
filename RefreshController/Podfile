@@ -1,14 +1,17 @@
-#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
-platform :ios, '8.0'
+source      'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
 #use_frameworks!
 
 inhibit_all_warnings!
 target :RefreshController  do
-    pod 'AppBaseCategory'
+
+    pod 'ATRefresh_ObjectC',:git => 'https://github.com/tianya2416/ATRefresh_ObjectC.git'
+    pod 'ATKit_ObjectC'
     pod 'Masonry'
     pod 'DZNEmptyDataSet'
-    pod 'YYKit'
     pod 'KVOController'
     pod 'AFNetworking'
-    pod 'MJRefresh', :git => 'https://github.com/CoderLT/MJRefresh.git'
+    pod 'MJRefresh'
+    pod 'YYModel'
+    pod 'SDWebImage'
 end

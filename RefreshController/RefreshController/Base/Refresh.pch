@@ -9,10 +9,13 @@
 #ifndef Refresh_pch
 #define Refresh_pch
 
+#import <YYModel.h>
+#import <NSObject+YYModel.h>
 #import "Masonry.h"
-#import "YYKit.h"
-#import "CategoryKit.h"
 
+#import <ATKit.h>
+#import <ATRefresh.h>
+#import <SDWebImage.h>
 #import "BaseModel.h"
 #import "BaseCollectionController.h"
 #import "BaseRefreshController.h"

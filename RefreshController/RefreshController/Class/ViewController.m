@@ -24,9 +24,11 @@
 }
 
 - (void)refreshData:(NSInteger)page{
-    self.listData = @[@"普通请求",@"集成下拉刷新",@"集成上拉加载",@"集成上拉加载/下拉刷新"];
-    [self.tableView reloadData];
-    [self endRefresh:NO];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.listData = @[@"普通请求",@"集成下拉刷新",@"集成上拉加载",@"集成上拉加载/下拉刷新"];
+        [self.tableView reloadData];
+        [self endRefresh:NO];
+    });
 }
 - (void)segmentAction:(UISegmentedControl *)sender{
     

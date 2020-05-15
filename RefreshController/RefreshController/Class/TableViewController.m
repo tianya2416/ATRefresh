@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "TableViewCell.h"
+
 @interface TableViewController ()
 @property (strong, nonatomic) NSMutableArray *listData;
 @property (assign, nonatomic) ATRefreshLoad refreshLoad;
@@ -65,14 +66,17 @@
     params[@"imgSize"] = [NSString stringWithFormat:@"%lix%li",(long)width,(long)height];
     
     [BaseNetManager wallHot:params success:^(id  _Nonnull object) {
-        if ([object isKindOfClass:NSArray.class]) {
-            NSArray *datas = [NSArray modelArrayWithClass:BaseModel.class json:object];
-            if (datas) {
-                [self.listData addObjectsFromArray:datas];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if ([object isKindOfClass:NSArray.class]) {
+                NSArray *datas = [NSArray yy_modelArrayWithClass:BaseModel.class json:object];
+               
+                if (datas) {
+                    [self.listData addObjectsFromArray:datas];
+                }
+                [self.tableView reloadData];
+                [self endRefresh:datas.count >= RefreshPageSize];
             }
-            [self.tableView reloadData];
-            [self endRefresh:datas.count >= RefreshPageSize];
-        }
+        });
     } failure:^(NSString * _Nonnull error) {
         [self endRefreshFailure];
     }];
@@ -96,7 +100,7 @@
 {
     TableViewCell *cell = [TableViewCell cellForTableView:tableView indexPath:indexPath];
     BaseModel *model = self.listData[indexPath.row];
-    [cell.imaeV setImageWithURL:[NSURL URLWithString:model.coverImgUrl] placeholder:[UIImage imageWithColor:[UIColor colorWithRGB:0xf6f6f6]]];
+    [cell.imaeV sd_setImageWithURL:[NSURL URLWithString:model.coverImgUrl]];
     cell.titleLab.text = model.gName ?:@"";
     cell.subTitleLab.text = [NSString stringWithFormat:@"观看次数:%@",model.voteGood ?:@"0"];
     return cell;

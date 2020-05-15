@@ -1,64 +1,75 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - AppBaseCategory (0.0.8)
+  - ATKit_ObjectC (0.1.3)
+  - ATRefresh_ObjectC (0.0.3):
+    - DZNEmptyDataSet (~> 1.8.1)
+    - KVOController (~> 1.2.0)
+    - MJRefresh (~> 3.4.3)
   - DZNEmptyDataSet (1.8.1)
   - KVOController (1.2.0)
   - Masonry (1.1.0)
-  - MJRefresh (3.1.15.2)
-  - YYKit (1.0.9):
-    - YYKit/no-arc (= 1.0.9)
-  - YYKit/no-arc (1.0.9)
+  - MJRefresh (3.4.3)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
-  - AppBaseCategory
+  - ATKit_ObjectC
+  - ATRefresh_ObjectC (from `https://github.com/tianya2416/ATRefresh_ObjectC.git`)
   - DZNEmptyDataSet
   - KVOController
   - Masonry
-  - MJRefresh (from `https://github.com/CoderLT/MJRefresh.git`)
-  - YYKit
+  - MJRefresh
+  - SDWebImage
+  - YYModel
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
-    - AppBaseCategory
+    - ATKit_ObjectC
     - DZNEmptyDataSet
     - KVOController
     - Masonry
-    - YYKit
+    - MJRefresh
+    - SDWebImage
+    - YYModel
 
 EXTERNAL SOURCES:
-  MJRefresh:
-    :git: https://github.com/CoderLT/MJRefresh.git
+  ATRefresh_ObjectC:
+    :git: https://github.com/tianya2416/ATRefresh_ObjectC.git
 
 CHECKOUT OPTIONS:
-  MJRefresh:
-    :commit: 179a881d703e875e79574860127559472ffeaf73
-    :git: https://github.com/CoderLT/MJRefresh.git
+  ATRefresh_ObjectC:
+    :commit: 67d64b33fb93bf2618c9d9da60c3ed254694d6ea
+    :git: https://github.com/tianya2416/ATRefresh_ObjectC.git
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AppBaseCategory: 0899cd3fb69b40066c3d0f17049261278435f20e
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  ATKit_ObjectC: a214fc39e605309bbf8b45b07d66ca7bd08aab4f
+  ATRefresh_ObjectC: 08176aa859bc57081a0c8aea8da0988fca0200fc
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: f845c1a10f0309233fb352425475897a5c50e9f0
-  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ca643c740c7c89d8236ac210e05cb47c14f20646
+PODFILE CHECKSUM: 25c47d971161e394f3db8841c75f9e6aed6ca80e
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.8.4

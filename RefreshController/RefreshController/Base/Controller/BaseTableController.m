@@ -54,8 +54,8 @@
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedRowHeight = 44;
         _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-        _tableView.separatorColor = [UIColor colorWithRGB:0xdddddd];
-        _tableView.backgroundColor = [UIColor colorWithRGB:0xf6f6f6];
+        _tableView.separatorColor = [UIColor whiteColor];
+        _tableView.backgroundColor = [UIColor whiteColor];
     }
     return _tableView;
 }

@@ -11,23 +11,23 @@
 @implementation BaseModel
 // 直接添加以下代码即可自动完成
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [self modelEncodeWithCoder:aCoder];
+    [self yy_modelEncodeWithCoder:aCoder];
 }
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super init];
+    self = [super yy_modelInitWithCoder:aDecoder];
     
-    return [self modelInitWithCoder:aDecoder];
+    return self;
 }
 - (id)copyWithZone:(NSZone *)zone {
-    return [self modelCopy];
+    return [self yy_modelCopy];
 }
 - (NSUInteger)hash {
-    return [self modelHash];
+    return [self yy_modelHash];
 }
 - (BOOL)isEqual:(id)object {
-    return [self modelIsEqual:object];
+    return [self yy_modelIsEqual:object];
 }
 - (NSString *)description {
-    return [self modelDescription];
+    return [self yy_modelDescription];
 }
 @end
