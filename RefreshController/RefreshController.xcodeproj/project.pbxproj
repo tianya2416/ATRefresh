@@ -27,6 +27,7 @@
 		0F66971322A6090800D7A85D /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F66971022A6090800D7A85D /* 2.png */; };
 		0F66971522A6090B00D7A85D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F66971422A6090B00D7A85D /* 1.png */; };
 		12D5CF4FFAC381FA133D3776 /* libPods-RefreshController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E23BC82062715198284A7125 /* libPods-RefreshController.a */; };
+		6A85E45F26BB898D00E63961 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A85E45E26BB898D00E63961 /* BaseViewController.m */; };
 		8F77DA0E212FED8700F5A87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F77DA0D212FED8700F5A87B /* Assets.xcassets */; };
 		8F77DA11212FED8700F5A87B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F77DA0F212FED8700F5A87B /* LaunchScreen.storyboard */; };
 		8F77DA14212FED8800F5A87B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DA13212FED8800F5A87B /* main.m */; };
@@ -66,6 +67,8 @@
 		0F66971022A6090800D7A85D /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		0F66971422A6090B00D7A85D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		43720529F033917E8E2E532D /* Pods-RefreshController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RefreshController.release.xcconfig"; path = "Pods/Target Support Files/Pods-RefreshController/Pods-RefreshController.release.xcconfig"; sourceTree = "<group>"; };
+		6A85E45D26BB898D00E63961 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		6A85E45E26BB898D00E63961 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		8A67886265B634B9F5D1415C /* Pods-RefreshController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RefreshController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RefreshController/Pods-RefreshController.debug.xcconfig"; sourceTree = "<group>"; };
 		8F77DA01212FED8500F5A87B /* RefreshController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefreshController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F77DA0D212FED8700F5A87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				0F41C131246E63A700C5C49B /* BaseRefreshController.m */,
 				0F41C132246E63A700C5C49B /* BaseTableController.h */,
 				0F41C12F246E63A700C5C49B /* BaseTableController.m */,
+				6A85E45D26BB898D00E63961 /* BaseViewController.h */,
+				6A85E45E26BB898D00E63961 /* BaseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				0F6696CC22A6000900D7A85D /* CollectionViewCell.m in Sources */,
 				0F6696CD22A6000900D7A85D /* AppDelegate.m in Sources */,
 				0F6696C922A6000900D7A85D /* CollectionController.m in Sources */,
+				6A85E45F26BB898D00E63961 /* BaseViewController.m in Sources */,
 				0F6696CA22A6000900D7A85D /* ViewController.m in Sources */,
 				0F6696CF22A6000900D7A85D /* TableViewController.m in Sources */,
 				0F41C140246E63A700C5C49B /* BaseModel.m in Sources */,

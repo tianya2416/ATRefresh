@@ -29,17 +29,12 @@
     
     使用方式
     一、//无下拉刷新、无上拉加载
-    [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATRefreshNone];
-    [self headerRefreshing];
     二、//有下拉刷新、无上拉加载
-    [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATHeaderRefresh|ATHeaderAutoRefresh];
     三、//无下拉刷新、有上拉加载
-    [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATFooterRefresh|ATFooterAutoRefresh];
     四、////有下拉刷新、有上拉加载
-    [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATRefreshDefault];
     
     - (void)refreshData:(NSInteger)page{

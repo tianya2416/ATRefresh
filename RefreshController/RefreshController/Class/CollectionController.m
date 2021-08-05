@@ -15,8 +15,7 @@
 @end
 
 @implementation CollectionController
-+ (instancetype)vcWithRefreshLoad:(ATRefreshLoad )refreshLoad
-{
++ (instancetype)vcWithRefreshLoad:(ATRefreshLoad )refreshLoad{
     CollectionController *vc = [[CollectionController alloc] init];
     vc.refreshLoad = refreshLoad;
     return vc;
@@ -30,23 +29,18 @@
     switch (self.refreshLoad) {
         case ATRefreshLoadNone:
         {//无下拉刷新、无上拉加载
-            [self setupEmpty:self.collectionView];
             [self setupRefresh:self.collectionView option:ATRefreshNone];
-            [self headerRefreshing];
         }break;
         case ATRefreshLoadHead:
         {//有下拉刷新、无上拉加载
-            [self setupEmpty:self.collectionView];
             [self setupRefresh:self.collectionView option:ATHeaderRefresh|ATHeaderAutoRefresh];
         }break;
         case ATRefreshLoadFoot:
         {//无下拉刷新、有上拉加载
-            [self setupEmpty:self.collectionView];
             [self setupRefresh:self.collectionView option:ATFooterRefresh|ATFooterAutoRefresh];
         }break;
         case ATRefreshLoadDefault:
         {//有下拉刷新、有上拉加载
-            [self setupEmpty:self.collectionView];
             [self setupRefresh:self.collectionView option:ATRefreshDefault];
         }break;
         default:

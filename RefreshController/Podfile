@@ -5,7 +5,6 @@ platform :ios, '9.0'
 inhibit_all_warnings!
 target :RefreshController  do
 
-    pod 'ATRefresh_ObjectC',:git => 'https://github.com/tianya2416/ATRefresh_ObjectC.git'
     pod 'ATKit_ObjectC'
     pod 'Masonry'
     pod 'DZNEmptyDataSet'
@@ -14,4 +13,5 @@ target :RefreshController  do
     pod 'MJRefresh'
     pod 'YYModel'
     pod 'SDWebImage'
+    pod 'ATRefresh_ObjectC',:git => 'https://github.com/tianya2416/ATRefresh_ObjectC.git'
 end

@@ -32,23 +32,18 @@
     switch (self.refreshLoad) {
         case ATRefreshLoadNone:
         {//无下拉刷新、无上拉加载
-            [self setupEmpty:self.tableView];
             [self setupRefresh:self.tableView option:ATRefreshNone];
-            [self headerRefreshing];
         }break;
         case ATRefreshLoadHead:
         {//有下拉刷新、无上拉加载
-            [self setupEmpty:self.tableView];
             [self setupRefresh:self.tableView option:ATHeaderRefresh|ATHeaderAutoRefresh];
         }break;
         case ATRefreshLoadFoot:
         {//无下拉刷新、有上拉加载
-            [self setupEmpty:self.tableView];
             [self setupRefresh:self.tableView option:ATFooterRefresh|ATFooterAutoRefresh];
         }break;
         case ATRefreshLoadDefault:
         {//有下拉刷新、有上拉加载
-            [self setupEmpty:self.tableView];
             [self setupRefresh:self.tableView option:ATRefreshDefault];
         }break;
         default:

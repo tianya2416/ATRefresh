@@ -20,6 +20,6 @@
 #import "BaseCollectionController.h"
 #import "BaseRefreshController.h"
 #import "BaseNetManager.h"
-
+#import <ATRefresh_ObjectC.h>
 
 #endif /* Refresh_pch */
